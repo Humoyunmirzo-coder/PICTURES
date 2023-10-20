@@ -10,6 +10,12 @@ namespace Aplication.Services
 {
     public  interface IUser  : IRepository<User>
     {
-      //  public Task < T> CreateAsync<T> ();
+
+        public Task < T> CreateAsync<T> ();
+        public Task DeleteAsync<T> ();
+        public Task UpdateAsync<T>();
+        public Task<IEnumerable<User>> GetAllAsync();
+
+
     }
 }

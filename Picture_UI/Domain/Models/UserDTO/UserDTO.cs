@@ -9,6 +9,6 @@ namespace Domain.Models.UserDTO
     public  class UserDTO : UserBaseEntityDTO
     {
         public int Id { get; set; }
-        public int ImageID { get; set; }
+        public string Name { get; set; }
     }
 }

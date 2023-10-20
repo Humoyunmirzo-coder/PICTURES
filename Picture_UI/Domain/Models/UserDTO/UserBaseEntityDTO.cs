@@ -9,13 +9,13 @@ namespace Domain.Models.UserDTO
 {
     public  class UserBaseEntityDTO
     {
-        public int ID { get; set; }
-        public string? Name { get; set; }
+      
+     
         public string Email { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
         public int? FriendsID { get; set; }
         public Friend Friend { get; set; }
-        public required IEnumerable<int> ImageID { get; set; }
+        public required List<int> ImageID { get; set; }
     }
 }

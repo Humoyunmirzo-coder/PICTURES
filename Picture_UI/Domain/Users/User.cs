@@ -12,7 +12,7 @@ namespace Domain.Users
         public int Id { get; set; }
         public int ImageID { get; set; }
 
-        private List<Image> _images = new List<Image>();
+        public  List<Image> _images = new List<Image>();
 
         public IReadOnlyCollection<Image> Images => _images.AsReadOnly();
 

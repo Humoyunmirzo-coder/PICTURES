@@ -1,5 +1,8 @@
 ﻿using Aplication.Services;
 using Domain.Users;
+using Infrastructure.DataAction;
+using Infrastructure.Services;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -14,7 +17,9 @@ namespace Infrastructure
     {
         public static void AddinfrastructureServices ( this IServiceCollection services  , IConfiguration configuration)
         {
-            services.AddScoped<IUser ,  User> ();
+            services.AddScoped<IUser , UserServise> ();
+            services.AddDbContext<UserDbContext>(options =>
+            options.UseNpgsql(configuration.GetConnectionString("PictureConfuguration")));
         }
     }
 }

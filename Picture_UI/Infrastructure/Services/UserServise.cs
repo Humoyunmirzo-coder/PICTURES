@@ -31,6 +31,11 @@ namespace Infrastructure.Services
 
         }
 
+        public Task<T> CreateAsync<T>()
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<bool> DeleteAsync(int Id)
         {
             User entity = await _userDb.FindAsync(Id);
@@ -40,6 +45,11 @@ namespace Infrastructure.Services
             _userDb.Remove(entity);
             _userDb.SaveChanges();
             return true;
+        }
+
+        public Task DeleteAsync<T>()
+        {
+            throw new NotImplementedException();
         }
 
         public Task<IEnumerable<User>> GetAllAsync()
@@ -59,6 +69,11 @@ namespace Infrastructure.Services
             _userDb.Update(entity);
             var executeRows = await _userDb.SaveChangesAsync();
             return executeRows > 0;
+        }
+
+        public Task UpdateAsync<T>()
+        {
+            throw new NotImplementedException();
         }
     }
 }
